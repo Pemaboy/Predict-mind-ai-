@@ -13,6 +13,7 @@ interface WebsiteViewProps {
   onOpenSubscribe: (planId?: SubscriptionPlanId) => void;
   onOpenVip: () => void;
   onOpenTrackRecord: () => void;
+  onOpenAccumulator?: () => void;
 }
 
 export const WebsiteView: React.FC<WebsiteViewProps> = ({
@@ -20,6 +21,7 @@ export const WebsiteView: React.FC<WebsiteViewProps> = ({
   onOpenSubscribe,
   onOpenVip,
   onOpenTrackRecord,
+  onOpenAccumulator,
 }) => {
   // Staking simulator state
   const [initialBankroll, setInitialBankroll] = useState<number>(50000);
@@ -187,19 +189,26 @@ export const WebsiteView: React.FC<WebsiteViewProps> = ({
               <ArrowRight className="w-4 h-4" />
             </button>
 
+            {onOpenAccumulator && (
+              <button
+                id="btn-hero-booking-codes"
+                onClick={onOpenAccumulator}
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-teal-500/20 to-emerald-500/20 hover:from-teal-500/30 hover:to-emerald-500/30 border border-emerald-500/50 text-emerald-300 font-extrabold text-sm flex items-center justify-center gap-2 transition-all active:scale-95 shadow-md shadow-emerald-500/10"
+              >
+                <Sparkles className="w-4 h-4 text-emerald-400" />
+                <span>AI Booking Code Generator</span>
+                <span className="text-[10px] bg-emerald-400 text-slate-950 px-1.5 py-0.5 rounded font-black uppercase">
+                  New
+                </span>
+              </button>
+            )}
+
             <button
               onClick={onOpenVip}
               className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/40 text-amber-300 font-bold text-sm flex items-center justify-center gap-2 transition-all active:scale-95"
             >
               <Crown className="w-4 h-4 text-amber-400" />
-              <span>Explore VIP Banker Suite (₦15,000)</span>
-            </button>
-
-            <button
-              onClick={onOpenTrackRecord}
-              className="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 font-semibold text-sm transition-all"
-            >
-              <span>Audited 79.2% Ledger</span>
+              <span>Explore VIP Banker Suite</span>
             </button>
           </div>
 

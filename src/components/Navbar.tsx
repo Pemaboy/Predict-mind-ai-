@@ -101,7 +101,23 @@ export const Navbar: React.FC<NavbarProps> = ({
               }`}
             >
               <Calendar className="w-4 h-4" />
-              App Terminal & Tips
+              App Terminal
+            </button>
+
+            <button
+              id="nav-tab-accumulator"
+              onClick={() => onTabChange('accumulator')}
+              className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-sm font-medium transition-all ${
+                currentTab === 'accumulator'
+                  ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm shadow-emerald-500/10'
+                  : 'text-emerald-400 hover:text-emerald-300 hover:bg-emerald-500/10'
+              }`}
+            >
+              <Sparkles className="w-4 h-4 text-emerald-400" />
+              Booking Codes
+              <span className="text-[9px] bg-emerald-500 text-slate-950 px-1.5 py-0.5 rounded font-black uppercase">
+                AI Slip
+              </span>
             </button>
 
             <button
@@ -231,6 +247,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             }`}
           >
             ⚽ App & Tips
+          </button>
+          <button
+            onClick={() => onTabChange('accumulator')}
+            className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap flex items-center gap-1 ${
+              currentTab === 'accumulator'
+                ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold'
+                : 'text-emerald-400 bg-emerald-950/40 border border-emerald-800/40'
+            }`}
+          >
+            <Sparkles className="w-3 h-3 text-emerald-400" />
+            <span>Booking Codes</span>
           </button>
           <button
             onClick={() => onTabChange('vip')}

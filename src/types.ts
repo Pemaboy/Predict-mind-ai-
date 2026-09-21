@@ -167,3 +167,37 @@ export interface HistoricalTip {
   tier: 'Standard' | 'VIP';
   confidence: number;
 }
+
+export type BookmakerName = 'SportyBet' | 'Bet9ja' | '1xBet' | 'BetKing' | 'MSport' | 'Betway';
+
+export type SlipRiskLevel = 'banker' | 'balanced' | 'aggressive';
+
+export interface SlipLeg {
+  fixtureId: string;
+  match: string;
+  homeTeam: string;
+  awayTeam: string;
+  league: string;
+  kickoff: string;
+  marketName: string;
+  pick: string;
+  odds: number;
+  confidence: number;
+  rationale: string;
+}
+
+export interface AccumulatorSlip {
+  id: string;
+  title: string;
+  bookmaker: BookmakerName;
+  bookingCode: string;
+  totalOdds: number;
+  legsCount: number;
+  averageConfidence: number;
+  riskProfile: string;
+  legs: SlipLeg[];
+  generatedAt: string;
+  stakeAmount: number;
+  potentialReturn: number;
+}
+

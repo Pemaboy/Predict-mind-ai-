@@ -16,6 +16,7 @@ import { TrackRecordView } from './components/TrackRecordView';
 import { SubscriptionView } from './components/SubscriptionView';
 import { DashboardView } from './components/DashboardView';
 import { WebsiteView } from './components/WebsiteView';
+import { AccumulatorGenerator } from './components/AccumulatorGenerator';
 import { AuthModal } from './components/AuthModal';
 import { DisclaimerModal } from './components/DisclaimerModal';
 import { 
@@ -154,6 +155,15 @@ export default function App() {
             onOpenSubscribe={handleOpenSubscribe}
             onOpenVip={() => setCurrentTab('vip')}
             onOpenTrackRecord={() => setCurrentTab('track-record')}
+            onOpenAccumulator={() => setCurrentTab('accumulator')}
+          />
+        )}
+
+        {/* TAB: AI ACCUMULATOR & BOOKING CODE GENERATOR */}
+        {currentTab === 'accumulator' && (
+          <AccumulatorGenerator
+            user={user}
+            onOpenSubscribe={handleOpenSubscribe}
           />
         )}
 
