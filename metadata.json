@@ -1,0 +1,6 @@
+{
+  "name": "Predict Mind AI",
+  "description": "AI-powered football prediction and sports analytics platform providing match insights, betting markets, Paystack subscription plans, and VIP intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
